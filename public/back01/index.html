@@ -7,27 +7,69 @@
     <title>Document</title>
     <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./libs/bootstrap-validator/css/bootstrapValidator.css">
+    <link rel="stylesheet" href="./libs/nprogress/nprogress.css">
     <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
-    <!-- 左侧菜单栏 -->
+    <!-- 乐淘左侧菜单栏区域 -->
     <div class="lt_aside">
-        <div class="branch"></div>
+        <div class="branch">黑马26期</div>
         <div class="user">
-            <img src="#" alt="">
+            <img src="./images/02.jpg" alt="">
             <p>超级管理员</p>
         </div>
         <div class="nav">
             <ul>
-                <li><a href="#">用户管理</a></li>
-                <li><a href="#">分类管理</a></li>
-                <li><a href="#">商品管理</a></li>
+                <li>
+                    <a href="#" >
+                    <i class="glyphicon glyphicon-user"></i><span>用户管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="category">
+                        <i class="glyphicon glyphicon-list"></i><span>分类管理</span>
+                    </a>
+                    <div class="child " style="display: none">
+                        <a href="first.html">一级分类</a>
+                        <a href="second.html">二级分类</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-tags"></i><span>商品管理</span>
+                    </a>
+                </li>
             </ul>
+        </div>
+    </div>
+    <!-- 乐淘主体区域 -->
+    <div class="lt_main">
+        <div class="top_option">
+            <a href="javascript:;" class="top_menu pull-left"><i class="glyphicon glyphicon-align-justify"></i></a>
+            <a href="javascript:;" class="logOut pull-right"><i class="glyphicon glyphicon-log-out"></i></a>
+        </div>
+        <div class="container-fluid">
+            <!-- 面包屑导航 -->
+            <ol class="breadcrumb">
+                <li><a href="#">管理系统</a></li>           
+                <li class="active">首页</li>
+            </ol>
+            <!-- 图表 -->
+            <div class="lt_content">
+                <div class="echart_1 pull-left h400"></div>
+                <div class="echart_2 pull-right h400"></div>
+            </div>
         </div>
     </div>
 
     <script src="./libs/jquery/jquery.js"></script>
     <script src="./libs/bootstrap/js/bootstrap.js"></script>
     <script src="./libs/bootstrap-validator/js/bootstrapValidator.js"></script>
+    <script src="./libs/nprogress/nprogress.js"></script>
+    <script src="./libs/echarts/echarts.min.js"></script>
+    <script src="./js/checklogin.js"></script>
+    <script src="./js/common.js"></script>
+    
+    <script src="./js/index.js"></script>
 </body>
 </html>

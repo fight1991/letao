@@ -25,5 +25,100 @@ a:active {
 }
 /* 主页侧边栏 */
 
-    /* background-color: #222D32; */
- 
+.lt_aside {
+    width: 180px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #222D32;
+    color: #fff;
+    z-index: 666;
+    transition: all 1s;
+}
+.lt_aside.hideMenu {
+    left: -180px;
+}
+.lt_aside .branch {
+    font-size: 25px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #367FA9;
+}
+.lt_aside .user {
+    width: 180px;
+    height: 180px;
+    padding-top: 30px;
+}
+.lt_aside .user img {
+    display: block;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-color: pink;
+}
+.lt_aside .user p {
+    font-size: 18px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+.lt_aside .nav a {
+    display: block;
+    height: 40px;
+    color: #fff;
+    padding-left: 40px;
+    line-height: 40px;
+    border-left: 3px solid transparent;
+}
+.lt_aside .nav li span {
+    padding-left: 5px;
+}
+.lt_aside .nav li .child {
+    padding-left: 20px;
+}
+.lt_aside .nav a.current {
+    background-color: #1D1F21;
+    border-left: 3px solid red;
+}
+/* 乐淘主体区域 */
+.lt_main  {
+    padding-left: 180px;
+    padding-top: 50px;
+    transition: all 1s;
+}
+.lt_main.hideMenu {
+    padding-left: 0;
+}
+.lt_main .top_option {
+    height: 50px;
+    background-color: #3C8DBC;
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    padding-left: 180px;
+    transition: all 1s;
+}
+.lt_main .top_option.hideMenu {
+    padding-left: 0;
+}
+.lt_main .top_option a {
+    display: block;
+    width: 50px;
+    height:50px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.lt_main .breadcrumb {
+    margin-top: 20px;
+}
+.lt_main .lt_content .h400 {
+    width: 48%;
+    height: 400px;
+    background-color: skyblue;
+}
