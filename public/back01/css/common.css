@@ -1,3 +1,17 @@
+/* 公共样式 */
+ul,ol {
+    list-style: none;
+    padding: 0;
+    margin:0;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+/* 登陆页面 */
+
 .bd_bg {
     background-color: #222D32;
 }
@@ -9,3 +23,7 @@
     line-height: 45px;
     font-size: 20px;
 }
+/* 主页侧边栏 */
+
+    /* background-color: #222D32; */
+ 
