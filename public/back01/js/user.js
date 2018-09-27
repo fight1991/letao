@@ -1,5 +1,5 @@
 $(function(){
-    //发送ajax请求,请求后台数据,再通过模板引擎渲染
+    //1.发送ajax请求,请求后台数据,再通过模板引擎渲染
     var currentPage = 1;
     var pageSize = 5;
     render();
@@ -30,4 +30,20 @@ $(function(){
             }
         })
     }
+    //点击按钮改变用户状态
+    $('tbody').on('click','button',function(){
+        var id = $(this).data('id');
+        var status = $(this).data('status')
+
+        $.ajax({
+            type:'post',
+            url:'/user/updateUser',
+            data:{id:id,isDelete:status},
+            dataType:'json',
+            success:function(info){
+
+                render();
+            }
+        })
+    })
 })
