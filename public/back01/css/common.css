@@ -10,6 +10,9 @@ a:hover,
 a:active {
     text-decoration: none;
 }
+.red {
+    color: red;
+}
 /* 登陆页面 */
 
 .bd_bg {

@@ -25,8 +25,12 @@ $(function(){
         $('.lt_main .top_option').toggleClass('hideMenu');
         $('.lt_aside').toggleClass('hideMenu');
     })
-    //4.点击top_option中的logOut按钮,发送Ajax请求,让后台销毁sessionId
+    //4.点击top_option中的logOut按钮,弹出模态框
     $('.top_option .logOut').click(function(){
+        $('#logout-modal').modal('show')
+    })
+    // 点击模态框中的退出按钮 发送Ajax请求,让后台销毁sessionId
+    $('#logoutBtn').click(function(){
         $.ajax({
             type:'get',
             url:'/employee/employeeLogout',
