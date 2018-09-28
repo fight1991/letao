@@ -30,20 +30,25 @@ $(function(){
             }
         })
     }
-    //点击按钮改变用户状态
+    //点击按钮弹出模态框
     $('tbody').on('click','button',function(){
+        $('#logout-modal').modal('show');
         var id = $(this).data('id');
         var status = $(this).data('status')
 
-        $.ajax({
-            type:'post',
-            url:'/user/updateUser',
-            data:{id:id,isDelete:status},
-            dataType:'json',
-            success:function(info){
-
-                render();
-            }
+        $('#changeBtn').click(function(){
+            $('#logout-modal').modal('hide')
+            $.ajax({
+                type:'post',
+                url:'/user/updateUser',
+                data:{id:id,isDelete:status},
+                dataType:'json',
+                success:function(info){
+    
+                    render();
+                }
+            })
         })
     })
+
 })
