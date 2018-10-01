@@ -1,5 +1,5 @@
 $(function(){
-   
+
     //1.设置进度条功能,
     //1.1禁用小圆环
     NProgress.configure({ showSpinner: false });
@@ -16,6 +16,7 @@ $(function(){
 
     //2.点击分类菜单,二级菜单显示
     $('.lt_aside .nav .category').click(function(){
+
         $('.lt_aside .child').stop().slideToggle();
     })
     //3.点击top_option中的menu按钮,aside左移,top_option和lt_main的padding为0

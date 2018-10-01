@@ -125,6 +125,7 @@ a:active {
     height: 400px;
     background-color: skyblue;
 }
-.lt_content .addCategory {
+.lt_content .addCategory,
+.lt_content .addProduct {
     margin-bottom: 20px;
 }

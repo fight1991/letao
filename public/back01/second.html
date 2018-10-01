@@ -95,58 +95,58 @@
     
     </script>
     <!-- 添加分类页面模态框 -->
-        <div class="modal fade" id="add-modal">
-            <form id="form">
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">
-                                <span>&times;</span>
-                            </button>
-                            <h4 class="modal-title">添加分类</h4>
+    <div class="modal fade" id="add-modal">
+        <form id="form">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                        <h4 class="modal-title">添加分类</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <!-- 选择一级分类下拉框 -->
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <span class="dropdownTxt">请选择一级分类</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" id="dropdownList">
+                                    <!--挖坑 通过模板引擎动态渲染 -->                                
+                                </ul>                                   
+                            </div>
+                            <!-- 选择一级分类输入框 需要获取id发送到后台-->
+                            <input type="hidden" name="categoryId" class="form-control">
+                        </div>                   
+                        <!-- 二级分类输入框 -->
+                        <div class="form-group">
+                            <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类">
                         </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <!-- 选择一级分类下拉框 -->
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                        <span class="dropdownTxt">请选择一级分类</span>
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" id="dropdownList">
-                                        <!--挖坑 通过模板引擎动态渲染 -->                                
-                                    </ul>                                   
-                                </div>
-                                <!-- 选择一级分类输入框 需要获取id发送到后台-->
-                                <input type="hidden" name="categoryId" class="form-control">
-                            </div>                   
-                            <!-- 二级分类输入框 -->
-                            <div class="form-group">
-                                <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类">
-                            </div>
-                            <!-- 文件上传输入框 -->
- 
-                            <div class="form-group">
-                                <label for="fileupload" class="btn btn-default">上传图片</label>
-                                <input id="fileupload" type="file" name="pic1" data-url="/category/addSecondCategoryPic" multiple style="display:none;">
-                                
-                            </div>
+                        <!-- 文件上传输入框 -->
+
+                        <div class="form-group">
+                            <label for="fileupload" class="btn btn-default">上传图片</label>
+                            <input id="fileupload" type="file" name="pic1" data-url="/category/addSecondCategoryPic" multiple style="display:none;">
                             
-                            <div class="form-group">
-                                <img src="./images/none.png" width="100" id="upImg">
-                                <input type="hidden" name="brandLogo" id="imgSrc" class="form-control">
-                                <input type="hidden" name="hot">
-                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                            <button type="submit" class="btn btn-primary" id="addBtn">添加</button>
+                        
+                        <div class="form-group">
+                            <img src="./images/none.png" width="100" id="upImg">
+                            <input type="hidden" name="brandLogo" id="imgSrc" class="form-control">
+                            <input type="hidden" name="hot">
                         </div>
                     </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary" id="addBtn">添加</button>
+                    </div>
                 </div>
-            </form>
-        </div>
-    
+            </div>
+        </form>
+    </div>
+
     <!-- 退出登陆模态框区域 -->
     <div class="modal fade" id="logout-modal">
         <div class="modal-dialog modal-sm">
