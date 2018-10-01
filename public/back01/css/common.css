@@ -13,6 +13,11 @@ a:active {
 .red {
     color: red;
 }
+.table.table-bordered th, 
+.table.table-bordered td {
+    vertical-align: middle;
+    text-align: center;
+}
 /* 登陆页面 */
 
 .bd_bg {
