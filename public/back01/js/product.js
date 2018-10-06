@@ -2,6 +2,7 @@ $(function(){
     //1.打开商品页面,动态渲染列表
     var currentPage = 1;
     var pageSize = 2;
+    var picArr = [];
     render();
     function render(){
         $.ajax({
@@ -50,6 +51,7 @@ $(function(){
         $('#dropdownText').text($(this).text());
         //将对应的id存储在隐藏域中
         $('[name="brandId"]').val($(this).data('id'))
+        $('#form').data('bootstrapValidator').updateStatus('brandId','VALID')
     })
     //4. 利用文件上传插件,实现图片的本地预览  
     $("#fileupload").fileupload({
@@ -60,7 +62,16 @@ $(function(){
             //获取图片地址
             var imgSrc = data.result.picAddr;
             //根据图片地址创建img并添加到imgBox最前面
-            $('#imgBox').prepend('<img src="'+ imgSrc +'" width = "100">');
+            picArr.push(data.result);
+            $('#imgBox').prepend('<img src="' + imgSrc + '" width = "100">');
+            if(picArr.length == 3 ) {
+                $('#form').data('bootstrapValidator').updateStatus('picStatus','VALID')
+            }
+            if(picArr.length > 3 ){
+                picArr.pop();
+                $('#imgBox img:last-of-type').remove();
+            }
+            
             
         }
     });
@@ -114,7 +125,7 @@ $(function(){
                     },
                     regexp:{
                         regexp:/^\d{2}-\d{2}$/,
-                        message:'请输入正确格式的尺码'
+                        message:'请输入正确格式35-36的尺码'
                     }
                 }
             },
@@ -149,5 +160,31 @@ $(function(){
                 }
             }
         }
+    })
+    //6.表单校验成功,发送ajax请求,阻止validator的默认提交
+    $('#form').on('success.form.bv', function (e) {
+        e.preventDefault();
+        var newDataForm = '';
+        var str = '';
+        str += '&' + 'picName1' + '=' + picArr[0].picName + '&' + 'picAddr1' + '=' + picArr[0].picAddr;
+        str += '&' + 'picName2' + '=' + picArr[1].picName + '&' + 'picAddr2' + '=' + picArr[1].picAddr;
+        str += '&' + 'picName3' + '=' + picArr[2].picName + '&' + 'picAddr3' + '=' + picArr[2].picAddr;
+        var dataForm = $('#form').serialize();
+        newDataForm = dataForm + str;
+        console.log(newDataForm)
+        $.ajax({
+            type: 'post',
+            url: '/product/addProduct',
+            data: newDataForm,
+            dataType: 'json',
+            success: function (info) {
+                // console.log(info);
+                if (info.success) {
+                    currentPage = 1;
+                    render();
+                    $('#add-modal').modal('hide');
+                }
+            }
+        })
     })
 })
